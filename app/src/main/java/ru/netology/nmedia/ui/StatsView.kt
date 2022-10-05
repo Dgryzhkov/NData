@@ -49,7 +49,12 @@ class StatsView @JvmOverloads constructor(
         }
     }
 
-    var data: List<Float> = emptyList()
+    var data: List<Float> = listOf(
+        500F,
+        500F,
+        500F,
+        500F
+    )
         set(value) {
             field = value
             update()
