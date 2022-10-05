@@ -9,5 +9,7 @@
         <item>@color/colorAccent</item>
         <item>#FFDE03</item>
         <item>#FF0266</item>
+        <item>#4CAF50</item>
+        <item>#FF5722</item>
     </array>
 </resources>
