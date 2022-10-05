@@ -12,13 +12,11 @@ class AppActivity : AppCompatActivity(R.layout.activity_app) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         val root = findViewById<ViewGroup>(R.id.root)
         val scene = Scene.getSceneForLayout(root, R.layout.end_scene, this)
         findViewById<View>(R.id.goButton).setOnClickListener{
             TransitionManager.go(scene)
         }
-
 
     }
 }
