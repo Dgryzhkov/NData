@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.AppActivity">
 
-    <FrameLayout
-        android:id="@+id/root"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include layout="@layout/start_scene"/>
-</FrameLayout>
-<Button
-    android:id="@+id/goButton"
-    android:text="@string/go"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|center"/>
-
-   
-    
+    <LinearLayout
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </ScrollView>
+    <Button
+        android:id="@+id/buttonGo"
+        android:text="@string/go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center" />
 </FrameLayout>
 
