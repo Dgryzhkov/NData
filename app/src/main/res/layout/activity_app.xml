@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.AppActivity">
 
-    <ru.netology.nmedia.ui.StatsView
-        android:id="@+id/statsView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center"
-        app:textSize="20sp"
-        app:lineWidth="25dp"
-        app:color1="#391279"
-        app:color2="#939124"
-        app:color3="#182957"
-        app:color4="#582012"
-
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </ScrollView>
+    <Button
+        android:id="@+id/buttonGo"
+        android:text="@string/go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center" />
 </FrameLayout>
 
