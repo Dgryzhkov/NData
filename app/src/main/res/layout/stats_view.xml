@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.netology.nmedia.ui.StatsView android:id="@+id/statsView"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    app:color1="#391279"
+    app:color2="#939124"
+    app:color3="#182957"
+    app:color4="#582012"
+    app:lineWidth="25dp"
+    app:textSize="20sp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" />
