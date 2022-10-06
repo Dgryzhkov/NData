@@ -31,8 +31,8 @@ class StatsView @JvmOverloads constructor(
     private var lineWith = AndroidUtils.dp(context, 5)
     private var colors = emptyList<Int>()
 
-    private var progress =0F
-    private var valueAnimator: ValueAnimator?=null
+    private var progress = 0F
+    private var valueAnimator: ValueAnimator? = null
 
 
     init {
@@ -75,7 +75,7 @@ class StatsView @JvmOverloads constructor(
     private val textPaint = Paint(
         Paint.ANTI_ALIAS_FLAG
     ).apply {
-        textSize = this@StatsView.textSize*3
+        textSize = this@StatsView.textSize * 3
         style = Paint.Style.FILL
         textAlign = Paint.Align.CENTER
     }
@@ -101,19 +101,23 @@ class StatsView @JvmOverloads constructor(
             paint.color = colors.getOrElse(index) { generateRandomColor() }
             val centerArc = startAngle + 0.5F * angle
             val startArc = centerArc - angle * progress / 2 + 360F * progress
-            val lengthArc =  angle * progress
-            canvas?.drawArc(oval,  startArc, lengthArc, false, paint)
-            println("""
+            val lengthArc = angle * progress
+            canvas?.drawArc(oval, startArc, lengthArc, false, paint)
+            println(
+                """
                 ====
                index = $index startFrom=$startAngle
                 progress = $progress 
                 centerArc = $centerArc startArc=$startArc lengthArc=$lengthArc
-            """.trimIndent())
+            """.trimIndent()
+            )
             startAngle += angle
         }
 
-        paint.color = colors.getOrNull(0) ?: generateRandomColor()
-        canvas?.drawArc(oval, -90F, 1F, false, paint)
+        if (progress == 1F) {
+            paint.color = colors.getOrNull(0) ?: generateRandomColor()
+            canvas?.drawArc(oval, -90F, 1F, false, paint)
+        }
         canvas?.drawText(
             "%.2f%%".format(100F),
             center.x,
@@ -124,7 +128,7 @@ class StatsView @JvmOverloads constructor(
 
     private fun generateRandomColor() = Random.nextInt(0xFF000000.toInt(), 0xFFFFFFFF.toInt())
 
-    private fun update(){
+    private fun update() {
         valueAnimator?.let {
             it.removeAllListeners()
             it.cancel()
